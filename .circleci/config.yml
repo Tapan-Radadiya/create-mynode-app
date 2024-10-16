@@ -37,7 +37,6 @@ jobs:
           command: npm publish
 
 workflows:
-  version: 2
   ci_pipeline:
     jobs:
       - install
