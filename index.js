@@ -15,4 +15,5 @@ async function createApp() {
     const targetDir = join(process.cwd(), userSelection.projectName)
     await craftProject({ userSelection, template_dir, targetDir })
 }
+
 createApp()
