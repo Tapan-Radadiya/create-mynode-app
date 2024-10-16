@@ -8,7 +8,7 @@
 With npm :
 
 ``` bash
-$ npx create-mynode-app
+$ npx create-mynode-app@latest
 ```
 With Yarn :
 
