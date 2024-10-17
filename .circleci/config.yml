@@ -31,13 +31,12 @@ jobs:
       - run:
           name: Authenticate with registry
           command: |
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run:
           name: View Files
           command: ls
       - run:
           name: Publish package
-          working_directory: ~/repo
           command: npm publish
 
 workflows:
