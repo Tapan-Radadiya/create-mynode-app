@@ -12,7 +12,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
       - run:
           name: Install Dependencies
@@ -20,7 +20,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
 
   deploy:
     executor: node-executor
@@ -33,10 +33,14 @@ jobs:
           command: |
             echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
       - run:
+          name: Update Package Version
+          command: npm version patch
+      - run:
           name: Publish package
           command: npm publish
 
 workflows:
+  version: 2
   ci_pipeline:
     jobs:
       - install
