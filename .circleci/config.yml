@@ -29,12 +29,13 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
+          name: View Files
+          command: ls
+      - run:
           name: Authenticate with registry
           command: |
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-      - run:
-          name: View Files
-          command: ls
+      
       - run:
           name: Publish package
           command: npm publish
