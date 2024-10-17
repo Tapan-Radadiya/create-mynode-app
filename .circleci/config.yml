@@ -29,9 +29,6 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
-          name: Debug .npmrc
-          command: cat ~/.npmrc
-      - run:
           name: Authenticate with registry
           command: |
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
