@@ -33,7 +33,11 @@ jobs:
           command: |
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
+          name: View Files
+          command: ls
+      - run:
           name: Publish package
+          working_directory: ~/repo
           command: npm publish
 
 workflows:
