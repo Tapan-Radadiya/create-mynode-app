@@ -36,9 +36,6 @@ jobs:
           command: |
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run:
-          name: Patch Version
-          command: npm version patch
-      - run:
           name: Publish package
           command: npm publish
 
