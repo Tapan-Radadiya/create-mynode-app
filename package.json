@@ -1,6 +1,6 @@
 {
   "name": "create-mynode-app",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A Node.js boilerplate to save you from creating the setup from scratch every time.",
   "main": "index.js",
   "type": "module",
