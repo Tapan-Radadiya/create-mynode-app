@@ -8,9 +8,9 @@ const validateProjectName = (projectName) => {
         flag = !/[<>:"/\\|?*]/.test(projectName)
     }
     else if (userOs === "linux") {
-        flag = /^(?!\.)(?!.*[<>:"/\\|?*]).{1,255}$/.test(projectName)
+        flag = /^[^/]+$/.test(projectName)
     }
-    
+
     if (flag) {
         if (!fs.existsSync(projectName)) {
             return true
