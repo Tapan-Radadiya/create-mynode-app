@@ -1,7 +1,8 @@
 import {
     craftNodeProject
-
 } from "../utils/copyProject.js"
+
+import path from "path"
 
 const craftProject = async ({
     userSelection: { language, templateType, projectName, mongodbUrl, mongoDbDatabaseName },
@@ -17,16 +18,16 @@ const craftProject = async ({
 
     switch (true) {
         case (language === "JavaScript" && templateType === "Simple Node.js"):
-            craftNodeProject(template_dir + "\\Javascript\\Express", option)
+            craftNodeProject(path.join(template_dir, "Javascript", "Express"), option)
             break
         case (language === "JavaScript" && templateType === "Node.js with Mongoose"):
-            craftNodeProject(template_dir + "\\Javascript\\ExpressWithMongoose", option)
+            craftNodeProject(path.join(template_dir, "Javascript", "ExpressWithMongoose"), option)
             break
         case (language === "TypeScript" && templateType === "Simple Node.js"):
-            craftNodeProject(template_dir + "\\Typescript\\Express", option)
+            craftNodeProject(path.join(template_dir, "Typescript", "Express"), option)
             break
         case (language === "TypeScript" && templateType === "Node.js with Mongoose"):
-            craftNodeProject(template_dir + "\\Typescript\\ExpressWithMongoose", option)
+            craftNodeProject(path.join(template_dir, "Typescript", "ExpressWithMongoose"), option)
             break
         default:
             break

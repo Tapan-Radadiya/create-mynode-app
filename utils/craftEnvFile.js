@@ -1,5 +1,6 @@
 import fs from "fs-extra"
 import validatePort from "./validatePort.js"
+import path from "path"
 async function craftEnvFile(targetDir, mongodbUrl, mongoDbDatabaseName) {
     let envData
     let port
@@ -11,6 +12,6 @@ async function craftEnvFile(targetDir, mongodbUrl, mongoDbDatabaseName) {
     else {
         envData = `PORT=${port}`
     }
-    await fs.writeFile(targetDir + "\\.env", envData, 'utf-8')
+    await fs.writeFile(path.join(targetDir, ".env"), envData, 'utf-8')
 }
 export default craftEnvFile

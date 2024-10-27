@@ -9,7 +9,7 @@ const userInput = async () => {
         {
             type: 'input',
             name: "projectName",
-            message: 'Enter Your Project Name : ',
+            message: 'Enter Your Project Name :: ',
             validate: validateProjectName
         },
         {
